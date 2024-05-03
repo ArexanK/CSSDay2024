@@ -7,3 +7,27 @@ function showSpeakers(year) {
   const selectedYear = document.getElementById("year-" + year);
   selectedYear.classList.add("show");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInputs = document.querySelectorAll(".speaker-search");
+
+  searchInputs.forEach(function (searchInput) {
+    searchInput.addEventListener("input", function () {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const yearContainer = searchInput.closest(".year");
+      const speakerCards = yearContainer.querySelectorAll(".speaker-card");
+
+      speakerCards.forEach(function (card) {
+        const speakerName = card
+          .querySelector(".speaker-name")
+          .innerText.toLowerCase();
+
+        if (speakerName.includes(searchTerm)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+});

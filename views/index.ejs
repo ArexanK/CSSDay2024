@@ -35,37 +35,43 @@
     </div>
     </div>
 
+   
+    
+
     <div id="years-container">
       <% Object.keys(data).forEach(year => { %> <% if (['2013', '2014', '2015',
       '2016', '2017', '2018', '2019', '2022', '2023', '2024'].includes(year)) {
       %> <% const yearData = data[year]; %>
       <div class="year" id="year-<%= year %>">
         <h2><%= year %></h2>
+        <div class="searchbar">Search speakers name</div>
+        <input type="text" class="speaker-search" placeholder="look for me">
+        
         <div class="speakers-container">
           <% yearData.speakers.forEach(function(speaker, index) { %>
             <div class="year-column">
-          <div key="<%= index %>" class="speaker-card">
-            <div class="speaker-info">
-              <img
-                src="<%= speaker.avatar %>"
-                alt="Avatar of <%= speaker.name %>"
-                class="speaker-avatar"
-              />
-              <p class="speaker-name"><%= speaker.name %></p>
-              <p class="speaker-country"><%= speaker.country %></p>
+              <div key="<%= index %>" class="speaker-card">
+                <div class="speaker-info">
+                  <img
+                    src="<%= speaker.avatar %>"
+                    alt="Avatar of <%= speaker.name %>"
+                    class="speaker-avatar"
+                  />
+                  <p class="speaker-name"><%= speaker.name %></p>
+                  <p class="speaker-country"><%= speaker.country %></p>
+                </div>
+                <div class="speaker-link">
+                  <a href="<%= speaker.link %>" class="speaker-button">Speaker Link</a>
+                </div>
+              </div>
             </div>
-            <div class="speaker-link">
-              <a href="<%= speaker.link %>" class="speaker-button"
-                >Speaker Link</a
-              >
-            </div>
-            </div>
-          </div>
           <% }); %>
         </div>
       </div>
-      <% } %> <% }); %>
+      <% } %>
+      <% }); %>
     </div>
+    
 
   </body>
 
