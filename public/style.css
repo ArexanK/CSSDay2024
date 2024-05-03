@@ -320,6 +320,13 @@ h1 {
     margin-bottom: 1rem;
     z-index: 1;
   }
+  .slide-track {
+    width: 100%; /* Set width to 100% to prevent overflow */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  }
+  .slider-container {
+    overflow-x: auto;
+  }
 
   .image-sticker,
   .image-computer {
