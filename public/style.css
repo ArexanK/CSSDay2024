@@ -1,25 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+:root {
+  --font-family-primary: "Press Start 2P", cursive;
+  --font-family-secondary: "IBM Plex Mono", monospace;
+  --font-size-h1: 6rem;
+  --font-size-h1-bold: 2rem;
+  --font-size-subtitle: 4rem;
+  --image-width: 20rem;
+  --image-height: 19rem;
+  --modal-width: 30rem;
+  --slider-width: 960px;
+  --border-color: #ccc;
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+}
+
 h1 {
-  font-family: "Press Start 2P";
-  font-size: 6rem;
-  font-bold: 2rem;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-h1);
+  font-weight: bold;
   margin-top: 2rem;
 }
 
 .subtitle {
-  width: 4rem;
+  width: var(--font-size-subtitle);
   padding-right: 16rem;
 }
 
 .image-sticker,
 .image-computer {
   display: block;
-  width: 20rem;
-  height: 19rem;
+  width: var(--image-width);
+  height: var(--image-height);
   margin-bottom: -100px;
 }
+
 .hero {
   position: relative;
   display: flex;
@@ -27,9 +43,7 @@ h1 {
   width: 80vw;
   height: 30rem;
   align-items: center;
-
   justify-content: center;
-
   margin: 2rem;
   background-color: #fafafa;
   padding: 5rem;
@@ -38,8 +52,9 @@ h1 {
 .image-container {
   position: relative;
 }
+
 .conference-info {
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 #openModalBtn {
@@ -47,19 +62,18 @@ h1 {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   padding: 5px;
   border: 2px solid black;
   background-color: white;
   box-shadow: 10px 5px 5px grey;
   cursor: pointer;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
   font-size: 15px;
   z-index: 1;
 }
 
 #openModalBtn:hover {
-  background-color: #45a049;
+  background-color: var(--primary-color);
 }
 
 .modal {
@@ -74,16 +88,14 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 30rem;
+  border: 1px solid var(--border-color);
+  width: var(--modal-width);
 }
 
-/* Close Button */
 .close {
   color: #aaa;
   float: right;
@@ -120,7 +132,6 @@ h1 {
   animation: wiggle 1s infinite;
 }
 
-/* Animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -130,7 +141,6 @@ h1 {
   }
 }
 
-/* Slider */
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
@@ -165,16 +175,6 @@ h1 {
   left: 0;
   width: 100%;
   z-index: 2;
-}
-
-/* Animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 10));
-  }
 }
 
 .slider::after {
@@ -219,7 +219,7 @@ h1 {
 .year {
   display: none;
   margin: 20px;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 .year.show {
@@ -229,7 +229,7 @@ h1 {
 .year h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 .speaker-search {
@@ -257,12 +257,14 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
 }
+
 .year-column {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   padding: 10px;
 }
+
 .speaker-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   padding: 10px;
 }
 
@@ -278,23 +280,23 @@ h1 {
 
 .speaker-name {
   font-weight: 800;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 .speaker-country {
   font-weight: 200;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 .speaker-link {
   text-align: center;
-  font-family: "IBM Plex Mono";
+  font-family: var(--font-family-secondary);
 }
 
 .speaker-button {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -302,7 +304,45 @@ h1 {
 }
 
 .speaker-button:hover {
-  background-color: #0056b3;
+  background-color: var(--secondary-color);
 }
 
-//responsiveness
+/* media queries */
+@media (max-width: 768px) {
+  header .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  header .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-sticker,
+  .image-computer {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .modal {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider {
+    width: var(--slider-width);
+  }
+
+  .slider-container {
+    width: 100%;
+  }
+}
