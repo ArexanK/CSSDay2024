@@ -26,7 +26,7 @@ h1 {
   width: 80vw;
   height: 30rem;
   align-items: center;
-  gap: 1rem;
+
   justify-content: center;
 
   margin: 2rem;
@@ -149,6 +149,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
 
 .year {
@@ -172,7 +173,10 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
 }
-
+.year-column {
+  border: 1px solid #ccc; /* Add a border around each column */
+  padding: 10px; /* Add some padding to each column */
+}
 .speaker-card {
   border: 1px solid #ccc;
   padding: 10px;

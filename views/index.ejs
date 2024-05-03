@@ -43,6 +43,7 @@
         <h2><%= year %></h2>
         <div class="speakers-container">
           <% yearData.speakers.forEach(function(speaker, index) { %>
+            <div class="year-column">
           <div key="<%= index %>" class="speaker-card">
             <div class="speaker-info">
               <img
@@ -57,6 +58,7 @@
               <a href="<%= speaker.link %>" class="speaker-button"
                 >Speaker Link</a
               >
+            </div>
             </div>
           </div>
           <% }); %>
