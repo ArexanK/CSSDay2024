@@ -1,6 +1,8 @@
-const express = require("express");
-const app = express();
+import express from "express";
+import { render } from "ejs";
+import fetch from "node-fetch";
 
+const app = express();
 const url = "https://cssday.nl/data.json";
 
 app.set("view engine", "ejs");
@@ -30,8 +32,15 @@ app.get("/", async (request, response) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+// Data route
+app.get("/data", async (req, res) => {
+  try {
+    const jsonData = await fetchJson(url);
+    res.json(jsonData);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Error fetching data" });
+  }
 });
 
 app.set("port", process.env.PORT || 3000);
