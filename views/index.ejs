@@ -2,71 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Day 10th aniversary</title>
     <link rel="stylesheet" href="/style.css" />
-    <script src="/public/main.js" defer></script>
+    <script src="main.js" type="text/javascript" defer></script>
   </head>
   <body>
     <header>
-    <div class="hero">
-      
-      <h1>CSS DAY 10TH Aniverssary</h1>
-      <div class="image-container">
-        <img class="image-sticker" src="image.jpg" aria-hidden="true">
-        <img class="image-computer" src="computer.jpg" aria-hidden="true">
-
-
-      </div>
-      
-    
-    </div>
-   </header>
-
-   <div id="years-container">
-    <% Object.keys(data).forEach(year => { %>
-      <% if (['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2022', '2023', '2024'].includes(year)) { %>
-        <% const yearData = data[year]; %>
-        <div class="year" id="year-<%= year %>">
-          <h2><%= year %></h2>
-          <div class="speakers-container">
-            <% yearData.speakers.forEach(function(speaker, index) { %>
-              <div key="<%= index %>" class="speaker-card">
-                <div class="speaker-info">
-                  <img src="<%= speaker.avatar %>" alt="Avatar of <%= speaker.name %>" class="speaker-avatar"/>
-                  <p class="speaker-name"><%= speaker.name %></p>
-                  <p class="speaker-country"><%= speaker.country %></p>
-                </div>
-                <div class="speaker-link">
-                  <a href="<%= speaker.link %>" class="speaker-button">Speaker Link</a>
-                </div>
-              </div>
-            <% }); %>
-          </div>
+      <div class="hero">
+        <h1>CSS DAY 10TH Aniverssary</h1>
+        <div class="image-container">
+          <img class="image-sticker" src="image.jpg" aria-hidden="true" />
+          <img class="image-computer" src="computer.jpg" aria-hidden="true" />
         </div>
-      <% } %>
-    <% }); %>
-  </div>
-  
-  <div class="slider">
-    <div class="slide-track">
-      <% ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2022', '2023', '2024'].forEach(year => { %>
+      </div>
+    </header>
+
+    <div id="years-container">
+      <% Object.keys(data).forEach(year => { %> <% if (['2013', '2014', '2015',
+      '2016', '2017', '2018', '2019', '2022', '2023', '2024'].includes(year)) {
+      %> <% const yearData = data[year]; %>
+      <div class="year" id="year-<%= year %>">
+        <h2><%= year %></h2>
+        <div class="speakers-container">
+          <% yearData.speakers.forEach(function(speaker, index) { %>
+          <div key="<%= index %>" class="speaker-card">
+            <div class="speaker-info">
+              <img
+                src="<%= speaker.avatar %>"
+                alt="Avatar of <%= speaker.name %>"
+                class="speaker-avatar"
+              />
+              <p class="speaker-name"><%= speaker.name %></p>
+              <p class="speaker-country"><%= speaker.country %></p>
+            </div>
+            <div class="speaker-link">
+              <a href="<%= speaker.link %>" class="speaker-button"
+                >Speaker Link</a
+              >
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+      <% } %> <% }); %>
+    </div>
+
+    <div class="slider">
+      <div class="slide-track">
+        <% ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2022',
+        '2023', '2024'].forEach(year => { %>
         <div class="slide" onclick="showSpeakers('<%= year %>')">
           <h3><%= year %></h3>
         </div>
-      <% }); %>
 
-      
+        <% }); %>
+      </div>
     </div>
-  </div>
-  
-  
-
-
   </body>
+
   <footer></footer>
-  </body>
 </html>
