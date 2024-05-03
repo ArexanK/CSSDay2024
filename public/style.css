@@ -2,14 +2,14 @@
 
 h1 {
   font-family: "Rubik Glitch Pop";
-  font-size: 6rem;
+  font-size: 8rem;
 }
 
 .image-sticker,
 .image-computer {
   display: block;
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  height: 20rem;
   margin-bottom: -80px;
 }
 .hero {
