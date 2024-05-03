@@ -320,10 +320,6 @@ h1 {
     margin-bottom: 1rem;
     z-index: 1;
   }
-  .slider {
-    width: 100%; 
-    overflow-x: hidden; 
-  }
 
   .image-sticker,
   .image-computer {
