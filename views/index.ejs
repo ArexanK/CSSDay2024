@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Day 10th aniversary</title>
     <link rel="stylesheet" href="/style.css" />
-    <script src="main.js" type="text/javascript" defer></script>
+    <script src="
+    main.js"></script>
   </head>
   <body>
     <header>
+      <div class="container">
       <div class="hero">
         <h1>CSS DAY 10TH Aniverssary</h1>
         <div class="image-container">
@@ -16,7 +18,21 @@
           <img class="image-computer" src="computer.jpg" aria-hidden="true" />
         </div>
       </div>
+      
     </header>
+
+    <div class="slider-container">
+    <div class="slider">
+      <div class="slide-track">
+        <% ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2022',
+        '2023', '2024'].forEach(year => { %>
+        <div class="slide" onclick="showSpeakers('<%= year %>')">
+          <h3><%= year %></h3>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    </div>
 
     <div id="years-container">
       <% Object.keys(data).forEach(year => { %> <% if (['2013', '2014', '2015',
@@ -48,17 +64,6 @@
       <% } %> <% }); %>
     </div>
 
-    <div class="slider">
-      <div class="slide-track">
-        <% ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2022',
-        '2023', '2024'].forEach(year => { %>
-        <div class="slide" onclick="showSpeakers('<%= year %>')">
-          <h3><%= year %></h3>
-        </div>
-
-        <% }); %>
-      </div>
-    </div>
   </body>
 
   <footer></footer>
