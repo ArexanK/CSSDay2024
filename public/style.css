@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-  --font-family-primary: "Press Start 2P", cursive;
-  --font-family-secondary: "IBM Plex Mono", monospace;
-  --font-size-h1: 6rem;
+  --font-family-primary: "Press Start 2P";
+  --font-family-secondary: "IBM Plex Mono";
+  --font-size-h1: 5rem;
   --font-size-h1-bold: 2rem;
   --font-size-subtitle: 4rem;
   --image-width: 20rem;
@@ -16,11 +16,24 @@
   --secondary-color: #0056b3;
 }
 
+body {
+  height: auto;
+  width: 100%;
+}
+
 h1 {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-h1);
   font-weight: bold;
-  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 15rem;
+}
+
+h2 {
+  font-family: var(--font-family-secondary);
+
+  font-size: 2rem;
+  display: flex;
 }
 
 .subtitle {
@@ -39,14 +52,15 @@ h1 {
 .hero {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: hero;
   width: 80vw;
   height: 30rem;
   align-items: center;
   justify-content: center;
   margin: 2rem;
   background-color: #fafafa;
-  padding: 5rem;
+  /* padding: 5rem; */
+  padding: 1rem 5rem;
 }
 
 .image-container {
@@ -232,6 +246,10 @@ h1 {
   font-family: var(--font-family-secondary);
 }
 
+.search-wrap {
+  padding: 1rem 5rem;
+}
+
 .speaker-search {
   border: 2px solid #000;
   background-color: #f5f5f5;
@@ -256,6 +274,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
+  padding: 1rem 5rem;
 }
 
 .year-column {
@@ -307,7 +326,30 @@ h1 {
   background-color: var(--secondary-color);
 }
 
-/* media queries */
+footer {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 2px solid #ccc;
+  background-color: #fafafa;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-secondary);
+}
+
+.footer-content p {
+  margin: 10px 0;
+}
+
+/* mobiele media queries */
 @media (max-width: 768px) {
   header .hero {
     flex-direction: column;
@@ -320,9 +362,16 @@ h1 {
     margin-bottom: 1rem;
     z-index: 1;
   }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+
   .slide-track {
-    width: 100%; /* Set width to 100% to prevent overflow */
-    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    width: 100%;
+    overflow-x: auto;
   }
   .slider-container {
     overflow-x: auto;
@@ -342,8 +391,74 @@ h1 {
     width: 90%;
     max-width: 300px;
   }
+  footer .container {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  footer .footer-content {
+    text-align: left;
+  }
+
+  footer .footer-content p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
 }
 
+/* tablet media queries */
+@media (min-width: 769px) and (max-width: 1023px) {
+  header .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  header .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+
+  .slide-track {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .slider-container {
+    overflow-x: auto;
+  }
+
+  .image-sticker,
+  .image-computer {
+    margin-top: -4rem;
+  }
+
+  .modal {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 300px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+
+  footer .footer-content p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+}
+
+/* desktop */
 @media (min-width: 1024px) {
   .slider {
     width: var(--slider-width);
@@ -351,5 +466,10 @@ h1 {
 
   .slider-container {
     width: 100%;
+  }
+  .hero {
+    flex-direction: row;
+    width: 80vw;
+    height: 30rem;
   }
 }

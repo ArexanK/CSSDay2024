@@ -1,3 +1,5 @@
+//filter years with speakers
+
 function showSpeakers(year) {
   // Hide all years
   const years = document.querySelectorAll(".year");
@@ -8,6 +10,7 @@ function showSpeakers(year) {
   selectedYear.classList.add("show");
 }
 
+//search bar
 document.addEventListener("DOMContentLoaded", function () {
   const searchInputs = document.querySelectorAll(".speaker-search");
 
@@ -51,3 +54,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
